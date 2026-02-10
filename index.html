@@ -1,75 +1,224 @@
- <div class="gallery">
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Midtex | Online Household Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+}
+
+/* DASHBOARD */
+.dashboard {
+    background: linear-gradient(135deg, #ff6b6b, #1e90ff);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.dashboard h1 {
+    font-size: 40px;
+}
+
+.dashboard p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    background: #2ecc71;
+    color: white;
+    padding: 10px 22px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* NAV */
+nav {
+    background: #111;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+    padding: 40px 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+}
+
+.card p {
+    margin: 5px 0;
+}
+
+/* CONTACT */
+.contact {
+    background: #0a3d62;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.contact a {
+    color: #feca57;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- DASHBOARD -->
+<div class="dashboard">
+    <h1>MIDTEX</h1>
+    <p>
+        Your trusted purely online shop for quality household items,
+        modern appliances, durable cooking pots and stylish shoes.
+    </p>
+    <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20to%20place%20an%20order" target="_blank">
+        Order via WhatsApp
+    </a>
+</div>
+
+<!-- NAV -->
+<nav>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2>Product Gallery</h2>
+
+<div class="gallery">
 
     <div class="card">
         <img src="a.jpg">
         <h3> Oven </h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Oven" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Oven" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="card">
         <img src="b.jpg">
         <h3>Fridge</h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Fridge" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Fridge" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="card">
         <img src="c.jpg">
         <h3>Casual Shoes</h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Casual%20Shoes" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Casual%20Shoes" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="card">
         <img src="d.jpg">
         <h3>Casual Shoes</h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Casual%20Shoes" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Casual%20Shoes" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="card">
         <img src="e.jpg">
         <h3>Cooking Pots</h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Cooking%20Pots" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Cooking%20Pots" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="card">
         <img src="f.jpg">
         <h3>cooking pots</h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Cooking%20Pots" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Cooking%20Pots" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="card">
         <img src="g.jpg">
         <h3>fridge</h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Fridge" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Fridge" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="card">
         <img src="h.jpg">
         <h3>Cooking Pot</h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Cooking%20Pot" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Cooking%20Pot" target="_blank">Order via WhatsApp</a>
     </div>
 
     <div class="card">
         <img src="k.jpg">
         <h3>Electric Oven</h3>
-        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Electric%20Oven" target="_blank">
-            Order via WhatsApp
-        </a>
+        <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Electric%20Oven" target="_blank">Order via WhatsApp</a>
     </div>
 
 </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+    <h2>Contact Midtex</h2>
+    <p>🛒 Purely Online Business</p>
+    <p>📞 0733 682 508 / 0724 928 553</p>
+    <p>📧 <a href="mailto:mwandomuindi@gmail.com">mwandomuindi@gmail.com</a></p>
+    <p>
+        <a href="https://instagram.com/AbedinegoMuindi" target="_blank">Instagram</a> |
+        <a href="https://facebook.com/Abedinegomuindi" target="_blank">Facebook</a>
+    </p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Midtex | Online Household Store</p>
+</footer>
+
+</body>
+</html>
