@@ -2,203 +2,229 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Midtex | Colorful Online Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Midtex Online Shop</title>
 
 <style>
-body{
-    margin:0;
-    font-family:Segoe UI, sans-serif;
-    background:#f4f6ff;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f8f9ff, #e3f2fd);
 }
 
-/* SLIDER */
-.slider{
-    position:relative;
-    height:350px;
-    overflow:hidden;
-}
-
-.slides{
-    display:flex;
-    width:300%;
-    animation:slide 12s infinite;
-}
-
-.slides img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-}
-
-@keyframes slide{
-    0%{margin-left:0%;}
-    33%{margin-left:0%;}
-    36%{margin-left:-100%;}
-    66%{margin-left:-100%;}
-    69%{margin-left:-200%;}
-    100%{margin-left:-200%;}
+/* HEADER */
+header {
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 /* NAV */
-nav{
-    background:#ff3c00;
-    padding:15px;
-    text-align:center;
-    color:white;
+nav {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    padding: 12px;
+    text-align: center;
 }
 
-nav span{
-    float:right;
-    margin-right:20px;
-    font-weight:bold;
+nav a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* SECTION COLORS */
-.home{background:#ffecd2;padding:50px;text-align:center;}
-.about{background:#d2f1ff;padding:50px;text-align:center;}
-.catalog{background:#ffe0f0;padding:50px;}
-.payment{background:#e6ffe0;padding:50px;text-align:center;}
+nav a:hover {
+    color: yellow;
+}
+
+/* SECTIONS */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* COLOURFUL SECTIONS */
+#home { background: linear-gradient(135deg, #ffecd2, #fcb69f); }
+#about { background: linear-gradient(135deg, #a1ffce, #faffd1); }
+#products { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
+#gallery { background: linear-gradient(135deg, #fddb92, #d1fdff); }
+#contact { background: linear-gradient(135deg, #c2ffd8, #465efb); color:white; }
 
 /* PRODUCTS */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    max-width:1100px;
-    margin:auto;
+.product {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px;
+    display: inline-block;
+    width: 250px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.card{
-    background:white;
-    border-radius:15px;
-    padding-bottom:15px;
-    box-shadow:0 8px 18px rgba(0,0,0,0.15);
-    text-align:center;
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
+button {
+    background: linear-gradient(90deg, #ff512f, #dd2476);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
 }
 
-.price{
-    color:red;
-    font-weight:bold;
+button:hover {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
 }
 
-button{
-    background:#28a745;
-    color:white;
-    border:none;
-    padding:8px 18px;
-    border-radius:20px;
-    cursor:pointer;
-    margin:5px;
-}
-
-button:hover{
-    background:#1e7e34;
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
 }
 </style>
 
 <script>
-let cartCount=0;
-
-function addToCart(name,price,image){
-    cartCount++;
-    document.getElementById("cart").innerText=cartCount;
-
-    let message="Hello Midtex,%0A";
-    message+="I want to order:%0A";
-    message+="Product: "+name+"%0A";
-    message+="Price: Ksh "+price+"%0A";
-    message+="Image: "+window.location.href+image+"%0A";
-    message+="Please share M-Pesa payment details.";
-
-    window.open("https://wa.me/254733682508?text="+message,"_blank");
+function orderProduct(productName) {
+    var phone = "254733682508";
+    var message = "Hello MIDTEX, I want this product: " + productName;
+    var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(url, '_blank');
 }
 </script>
 
 </head>
 <body>
 
-<!-- SLIDER -->
-<div class="slider">
-    <div class="slides">
-        <img src="a.jpg">
-        <img src="b.jpg">
-        <img src="c.jpg">
-    </div>
-</div>
+<header>
+    <h1>WELCOME TO MIDTEX ONLINE SHOP</h1>
+    <p>Your Trusted Online Store for Household & Electrical Items</p>
+</header>
 
-<!-- NAV -->
 <nav>
-MIDTEX ONLINE STORE
-<span>🛒 Cart: <span id="cart">0</span></span>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
 </nav>
 
 <!-- HOME -->
-<section class="home">
-<h1>Welcome to Midtex</h1>
-<p>Your colourful marketplace for Electrical Appliances, Household Goods & Stylish Shoes.</p>
+<section id="home">
+    <h2>Quality Products at Affordable Prices</h2>
+    <p>At MIDTEX, we pride ourselves in delivering high-quality household appliances,
+    stylish shoes, modern utensils, and reliable electrical items.</p>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+    <h2>Our Products</h2>
+
+    <div class="product">
+        <img src="a.jpg">
+        <h3>Gas Cooker</h3>
+        <button onclick="orderProduct('Gas Cooker')">Order via WhatsApp</button>
+    </div>
+
+    <div class="product">
+        <img src="b.jpg">
+        <h3>Fridge</h3>
+        <button onclick="orderProduct('Fridge')">Order via WhatsApp</button>
+    </div>
+
+    <div class="product">
+        <img src="c.jpg">
+        <h3>Asul Shoes</h3>
+        <button onclick="orderProduct('Asul Shoes')">Order via WhatsApp</button>
+    </div>
+
+    <div class="product">
+        <img src="d.jpg">
+        <h3>Casual Shoes</h3>
+        <button onclick="orderProduct('Casual Shoes')">Order via WhatsApp</button>
+    </div>
+
+    <div class="product">
+        <img src="e.jpg">
+        <h3>Cooking Pots</h3>
+        <button onclick="orderProduct('Cooking Pots')">Order via WhatsApp</button>
+    </div>
+
+    <div class="product">
+        <img src="f.jpg">
+        <h3>Fridge</h3>
+        <button onclick="orderProduct('Fridge')">Order via WhatsApp</button>
+    </div>
+
+    <div class="product">
+        <img src="g.jpg">
+        <h3>Cooking Pots</h3>
+        <button onclick="orderProduct('Cooking Pots')">Order via WhatsApp</button>
+    </div>
+
+    <div class="product">
+        <img src="h.jpg">
+        <h3>Cooking Pot</h3>
+        <button onclick="orderProduct('Cooking Pot')">Order via WhatsApp</button>
+    </div>
+
+    <div class="product">
+        <img src="k.jpg">
+        <h3>Water Dispenser</h3>
+        <button onclick="orderProduct('Water Dispenser')">Order via WhatsApp</button>
+    </div>
+
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2>Product Gallery</h2>
+    <img src="a.jpg" width="200">
+    <img src="b.jpg" width="200">
+    <img src="c.jpg" width="200">
+    <img src="d.jpg" width="200">
+    <img src="e.jpg" width="200">
+    <img src="f.jpg" width="200">
+    <img src="g.jpg" width="200">
+    <img src="h.jpg" width="200">
+    <img src="k.jpg" width="200">
 </section>
 
 <!-- ABOUT -->
-<section class="about">
-<h2>About Us</h2>
-<p>Midtex is a purely online shop delivering quality and affordable products with easy WhatsApp ordering and fast response.</p>
+<section id="about">
+    <h2>About MIDTEX</h2>
+    <p>MIDTEX is a fully online shop providing top-quality household appliances,
+    electrical products, and fashionable footwear.</p>
+    <p>We focus on affordability, reliability, and customer satisfaction.</p>
 </section>
 
-<!-- CATALOG -->
-<section class="catalog">
-<h2 style="text-align:center;">Product Catalog</h2>
-
-<div class="gallery">
-
-<div class="card">
-<img src="a.jpg">
-<h3>Gas Cooker</h3>
-<p class="price">Ksh 18,000</p>
-<button onclick="addToCart('Gas Cooker','18000','a.jpg')">Order</button>
-</div>
-
-<div class="card">
-<img src="b.jpg">
-<h3>Fridge</h3>
-<p class="price">Ksh 45,000</p>
-<button onclick="addToCart('Fridge','45000','b.jpg')">Order</button>
-</div>
-
-<div class="card">
-<img src="c.jpg">
-<h3>Official Shoes</h3>
-<p class="price">Ksh 3,500</p>
-<button onclick="addToCart('Official Shoes','3500','c.jpg')">Order</button>
-</div>
-
-<div class="card">
-<img src="e.jpg">
-<h3>Cooking Pots</h3>
-<p class="price">Ksh 6,000</p>
-<button onclick="addToCart('Cooking Pots','6000','e.jpg')">Order</button>
-</div>
-
-</div>
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 0733 682508</p>
+    <p>📞 0724 928553</p>
+    <p>📧 mwandomuindi@gmail.com</p>
+    <p>
+        Follow us on:
+        <br>
+        Instagram: AbedinegoMuindi
+        <br>
+        Facebook: Abedinegomuindi
+    </p>
 </section>
 
-<!-- MPESA -->
-<section class="payment">
-<h2>M-Pesa Payment</h2>
-<p>
-After placing your order on WhatsApp, make payment via:<br><br>
-<b>Paybill:</b> <br>
-<b>Account Name:</b> MIDTEX<br><br>
-Send confirmation screenshot on WhatsApp.
-</p>
-</section>
+<footer>
+    <p>&copy; 2026 MIDTEX Online Shop. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
-
