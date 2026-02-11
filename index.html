@@ -5,104 +5,160 @@
 <title>Midtex | Online Household Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body{
+*{
 margin:0;
-font-family:Arial, sans-serif;
-background:#f4f6f9;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(120deg,#f093fb,#f5576c,#4facfe);
+background-size:300% 300%;
+animation:bgMove 12s infinite alternate;
+color:#333;
+}
+
+@keyframes bgMove{
+0%{background-position:left;}
+100%{background-position:right;}
 }
 
 /* DASHBOARD */
 .dashboard{
-background:linear-gradient(135deg,#ff512f,#dd2476);
-color:white;
-padding:60px 20px;
+padding:80px 20px;
 text-align:center;
+color:white;
+background:linear-gradient(135deg,#ff512f,#dd2476);
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-.btn{
-display:inline-block;
-background:#2ecc71;
-color:white;
-padding:10px 20px;
-border-radius:25px;
-text-decoration:none;
-margin:10px;
-font-weight:bold;
+.dashboard h1{
+font-size:45px;
+letter-spacing:2px;
+}
+
+.dashboard p{
+max-width:800px;
+margin:20px auto;
+font-size:18px;
+line-height:1.7;
 }
 
 /* NAV */
 nav{
-background:linear-gradient(90deg,#000428,#004e92);
+background:rgba(0,0,0,0.8);
 padding:15px;
 text-align:center;
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 nav a{
 color:white;
-margin:0 10px;
+margin:0 15px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
+transition:0.3s;
 }
 
 nav a:hover{
-color:yellow;
+color:#ffd700;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+color:white;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+margin-top:15px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* SECTIONS */
 section{
-padding:50px 20px;
-color:#333;
-}
-
-#categories{background:linear-gradient(135deg,#f6d365,#fda085);}
-#gallery{background:linear-gradient(135deg,#a1c4fd,#c2e9fb);}
-#catalog{background:linear-gradient(135deg,#84fab0,#8fd3f4);}
-#about{background:linear-gradient(135deg,#fccb90,#d57eeb);}
-#terms{background:linear-gradient(135deg,#f093fb,#f5576c);}
-#privacy{background:linear-gradient(135deg,#4facfe,#00f2fe);}
-#refund{background:linear-gradient(135deg,#43e97b,#38f9d7);}
-#sitemap{background:linear-gradient(135deg,#fa709a,#fee140);}
-
-h2{
+padding:70px 20px;
 text-align:center;
-margin-bottom:20px;
+color:white;
 }
 
+section p{
+max-width:900px;
+margin:15px auto;
+line-height:1.8;
+font-size:17px;
+}
+
+/* Individual Section Colors */
+#categories{background:linear-gradient(135deg,#ff9a9e,#fad0c4);}
+#gallery{background:linear-gradient(135deg,#a18cd1,#fbc2eb);}
+#catalog{background:linear-gradient(135deg,#fbc2eb,#a6c1ee);}
+#about{background:linear-gradient(135deg,#84fab0,#8fd3f4);}
+#terms{background:linear-gradient(135deg,#fccb90,#d57eeb);}
+#privacy{background:linear-gradient(135deg,#43e97b,#38f9d7);}
+#refund{background:linear-gradient(135deg,#fa709a,#fee140);}
+#sitemap{background:linear-gradient(135deg,#30cfd0,#330867);}
+
+/* GALLERY */
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:20px;
-max-width:1100px;
-margin:auto;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1200px;
+margin:40px auto;
 }
 
 .card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 5px 10px rgba(0,0,0,0.2);
-text-align:center;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:15px;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
 }
 
 .card img{
 width:100%;
 height:200px;
 object-fit:cover;
+border-radius:15px;
+margin-bottom:10px;
 }
 
+/* CONTACT */
 .contact{
-background:linear-gradient(135deg,#0a3d62,#3c6382);
+background:linear-gradient(135deg,#000428,#004e92);
 color:white;
 text-align:center;
-padding:40px 20px;
+padding:60px 20px;
 }
 
 footer{
-background:#000;
+background:black;
 color:white;
 text-align:center;
-padding:15px;
+padding:20px;
 }
 </style>
 
@@ -125,9 +181,9 @@ card.style.display="none";
 <div class="dashboard">
 <h1>WELCOME TO MIDTEX</h1>
 <p>
-At MIDTEX, we proudly offer quality household products, durable kitchenware,
-modern electrical appliances and stylish footwear. We are committed to
-affordability, reliability, and customer satisfaction.
+Your trusted purely online shop for quality household items, durable kitchenware,
+modern electrical appliances and stylish shoes. At MIDTEX we combine affordability,
+quality and convenience to serve you better.
 </p>
 <a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20to%20place%20an%20order" target="_blank">
 Order via WhatsApp
@@ -148,17 +204,12 @@ Order via WhatsApp
 
 <section id="categories">
 <h2>Product Categories</h2>
-<p>We organize our products into the following categories for easy shopping:</p>
-<ul>
-<li><strong>Household Items:</strong> Cooking pots, utensils, and kitchen essentials.</li>
-<li><strong>Electrical Items:</strong> Fridges, ovens, water dispensers and appliances.</li>
-<li><strong>Footwear:</strong> Casual and official shoes.</li>
-</ul>
-<div style="text-align:center;">
-<button class="btn" onclick="filterProducts('all')">All</button>
-<button class="btn" onclick="filterProducts('household')">Household</button>
-<button class="btn" onclick="filterProducts('electric')">Electrical</button>
-<button class="btn" onclick="filterProducts('wear')">Shoes</button>
+<p>We organize our products into Household Items, Electrical Items, and Footwear for easy shopping and quick navigation.</p>
+<div>
+<a class="btn" onclick="filterProducts('all')">All</a>
+<a class="btn" onclick="filterProducts('household')">Household</a>
+<a class="btn" onclick="filterProducts('electric')">Electrical</a>
+<a class="btn" onclick="filterProducts('wear')">Shoes</a>
 </div>
 </section>
 
@@ -227,58 +278,41 @@ Order via WhatsApp
 <section id="about">
 <h2>About MIDTEX</h2>
 <p>
-MIDTEX is a purely online business dedicated to delivering high-quality household
-items and appliances directly to customers. Our mission is to provide reliable,
-affordable, and durable products while maintaining excellent customer service.
-We aim to simplify shopping through digital convenience and fast WhatsApp ordering.
-</p>
-<p>
-Our values include integrity, transparency, affordability, and customer satisfaction.
-We continuously improve our product range to meet modern home needs.
+MIDTEX is a purely online household and appliance store committed to delivering quality,
+durability and affordability. Our goal is to make shopping simple through WhatsApp ordering
+while maintaining professional customer service standards.
 </p>
 </section>
 
 <section id="terms">
 <h2>Terms & Conditions</h2>
 <p>
-By placing an order with MIDTEX, customers agree to confirm product availability
-and pricing through WhatsApp before payment. Orders are processed after confirmation.
-Delivery timelines depend on customer location and product availability.
-</p>
-<p>
-MIDTEX reserves the right to update prices, policies, and product listings without prior notice.
-All product descriptions aim to be accurate, but slight variations may occur.
+All orders are confirmed via WhatsApp. Prices may vary depending on availability.
+MIDTEX reserves the right to update product listings and policies without prior notice.
+Customers must confirm product details before payment.
 </p>
 </section>
 
 <section id="privacy">
 <h2>Privacy Policy</h2>
 <p>
-MIDTEX respects customer privacy. Personal information such as names,
-phone numbers, and delivery addresses collected during ordering will be used strictly
-for order processing and communication purposes.
-</p>
-<p>
-We do not sell, share, or distribute customer information to third parties.
+Customer information collected during ordering is used strictly for processing
+and communication purposes. MIDTEX does not share or sell customer data.
 </p>
 </section>
 
 <section id="refund">
 <h2>Return & Refund Policy</h2>
 <p>
-Customers may request a return within 48 hours of receiving defective or incorrect items.
-Products must be returned in original condition.
-Refunds are processed after inspection and confirmation of issue.
-</p>
-<p>
-Shipping costs for returns may apply depending on the situation.
+Returns are accepted within 48 hours for defective products.
+Refunds are processed after inspection and confirmation.
 </p>
 </section>
 
 <section id="sitemap">
 <h2>Website Sitemap</h2>
 <p>
-Home | Gallery | Categories | Catalog | About | Terms & Conditions | Privacy Policy | Refund Policy | Contact
+Home | Gallery | Categories | Catalog | About | Terms | Privacy | Refund | Contact
 </p>
 </section>
 
@@ -290,7 +324,7 @@ Home | Gallery | Categories | Catalog | About | Terms & Conditions | Privacy Pol
 </div>
 
 <footer>
-<p>© 2026 Midtex | Online Household Store</p>
+© 2026 Midtex | Online Household Store
 </footer>
 
 </body>
