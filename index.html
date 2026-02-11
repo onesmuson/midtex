@@ -2,116 +2,79 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Midtex | Online Store</title>
+<title>Midtex | Colorful Online Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
     margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#f8f9ff;
+    font-family:Segoe UI, sans-serif;
+    background:#f4f6ff;
 }
 
-/* HEADER */
-.header{
-    background:linear-gradient(135deg,#ff9900,#ff3c00);
-    color:white;
-    text-align:center;
-    padding:60px 20px;
+/* SLIDER */
+.slider{
+    position:relative;
+    height:350px;
+    overflow:hidden;
 }
 
-.header h1{
-    font-size:45px;
-    margin:0;
+.slides{
+    display:flex;
+    width:300%;
+    animation:slide 12s infinite;
 }
 
-.header p{
-    font-size:18px;
-    max-width:700px;
-    margin:auto;
+.slides img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+@keyframes slide{
+    0%{margin-left:0%;}
+    33%{margin-left:0%;}
+    36%{margin-left:-100%;}
+    66%{margin-left:-100%;}
+    69%{margin-left:-200%;}
+    100%{margin-left:-200%;}
 }
 
 /* NAV */
 nav{
-    background:#1e1e2f;
+    background:#ff3c00;
     padding:15px;
     text-align:center;
-}
-
-nav a{
     color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
 }
 
-nav a:hover{
-    color:#ff9900;
+nav span{
+    float:right;
+    margin-right:20px;
+    font-weight:bold;
 }
 
 /* SECTION COLORS */
-.catalog-section{
-    background:#ffffff;
-    padding:50px 20px;
-}
-
-.about-section{
-    background:#fff4e6;
-    padding:50px 20px;
-}
-
-.terms-section{
-    background:#e6f7ff;
-    padding:50px 20px;
-}
-
-.policy-section{
-    background:#f0ffe6;
-    padding:50px 20px;
-}
-
-h2{
-    text-align:center;
-    margin-bottom:30px;
-    font-size:30px;
-}
-
-/* FILTER BUTTONS */
-.filter-btn{
-    background:#ff3c00;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    margin:5px;
-    border-radius:25px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.filter-btn:hover{
-    background:#ff9900;
-}
+.home{background:#ffecd2;padding:50px;text-align:center;}
+.about{background:#d2f1ff;padding:50px;text-align:center;}
+.catalog{background:#ffe0f0;padding:50px;}
+.payment{background:#e6ffe0;padding:50px;text-align:center;}
 
 /* PRODUCTS */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:25px;
-    max-width:1200px;
+    max-width:1100px;
     margin:auto;
 }
 
 .card{
     background:white;
     border-radius:15px;
+    padding-bottom:15px;
     box-shadow:0 8px 18px rgba(0,0,0,0.15);
-    overflow:hidden;
-    transition:0.3s;
     text-align:center;
-}
-
-.card:hover{
-    transform:scale(1.05);
 }
 
 .card img{
@@ -120,174 +83,121 @@ h2{
     object-fit:cover;
 }
 
-.card h3{
-    margin:15px 0 10px;
-}
-
-.order-btn{
-    display:inline-block;
-    background:#28a745;
-    color:white;
-    padding:10px 20px;
-    border-radius:25px;
-    text-decoration:none;
-    margin-bottom:15px;
+.price{
+    color:red;
     font-weight:bold;
 }
 
-.order-btn:hover{
+button{
+    background:#28a745;
+    color:white;
+    border:none;
+    padding:8px 18px;
+    border-radius:20px;
+    cursor:pointer;
+    margin:5px;
+}
+
+button:hover{
     background:#1e7e34;
-}
-
-/* INFO BOX */
-.info-box{
-    max-width:900px;
-    margin:auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* CONTACT */
-.contact{
-    background:#1e1e2f;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-}
-
-footer{
-    background:#ff3c00;
-    color:white;
-    text-align:center;
-    padding:15px;
 }
 </style>
 
 <script>
-function filterProducts(category){
-    let cards=document.getElementsByClassName("card");
-    for(let i=0;i<cards.length;i++){
-        if(category==="all"){
-            cards[i].style.display="block";
-        }else{
-            if(cards[i].classList.contains(category)){
-                cards[i].style.display="block";
-            }else{
-                cards[i].style.display="none";
-            }
-        }
-    }
+let cartCount=0;
+
+function addToCart(name,price,image){
+    cartCount++;
+    document.getElementById("cart").innerText=cartCount;
+
+    let message="Hello Midtex,%0A";
+    message+="I want to order:%0A";
+    message+="Product: "+name+"%0A";
+    message+="Price: Ksh "+price+"%0A";
+    message+="Image: "+window.location.href+image+"%0A";
+    message+="Please share M-Pesa payment details.";
+
+    window.open("https://wa.me/254733682508?text="+message,"_blank");
 }
 </script>
 
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <h1>MIDTEX</h1>
-    <p>
-        Welcome to Midtex – Your trusted colourful online marketplace for
-        household goods, electrical appliances, and stylish footwear.
-        Quality products. Affordable prices. Easy WhatsApp ordering.
-    </p>
+<!-- SLIDER -->
+<div class="slider">
+    <div class="slides">
+        <img src="a.jpg">
+        <img src="b.jpg">
+        <img src="c.jpg">
+    </div>
 </div>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav>
-    <a href="#catalog">Catalog</a>
-    <a href="#about">About</a>
-    <a href="#terms">Terms</a>
-    <a href="#policy">Refund Policy</a>
-    <a href="#contact">Contact</a>
+MIDTEX ONLINE STORE
+<span>🛒 Cart: <span id="cart">0</span></span>
 </nav>
 
-<!-- CATALOG -->
-<section id="catalog" class="catalog-section">
-<h2>Product Catalog</h2>
-
-<div style="text-align:center;">
-<button class="filter-btn" onclick="filterProducts('all')">All</button>
-<button class="filter-btn" onclick="filterProducts('electrical')">Electrical</button>
-<button class="filter-btn" onclick="filterProducts('household')">Household</button>
-<button class="filter-btn" onclick="filterProducts('wearing')">Shoes</button>
-</div>
-
-<br>
-
-<div class="gallery">
-
-<div class="card electrical">
-<img src="a.jpg">
-<h3>Gas Cooker</h3>
-<a class="order-btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20Gas%20Cooker" target="_blank">Order Now</a>
-</div>
-
-<div class="card electrical">
-<img src="b.jpg">
-<h3>Fridge</h3>
-<a class="order-btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20Fridge" target="_blank">Order Now</a>
-</div>
-
-<div class="card wearing">
-<img src="c.jpg">
-<h3>Official Shoes</h3>
-<a class="order-btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20Official%20Shoes" target="_blank">Order Now</a>
-</div>
-
-<div class="card household">
-<img src="e.jpg">
-<h3>Cooking Pots</h3>
-<a class="order-btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20Cooking%20Pots" target="_blank">Order Now</a>
-</div>
-
-</div>
+<!-- HOME -->
+<section class="home">
+<h1>Welcome to Midtex</h1>
+<p>Your colourful marketplace for Electrical Appliances, Household Goods & Stylish Shoes.</p>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="about-section">
-<h2>About Midtex</h2>
-<div class="info-box">
-Midtex is a purely online store committed to providing reliable and affordable products.
-We combine convenience, trust, and fast WhatsApp ordering to serve our customers better.
+<section class="about">
+<h2>About Us</h2>
+<p>Midtex is a purely online shop delivering quality and affordable products with easy WhatsApp ordering and fast response.</p>
+</section>
+
+<!-- CATALOG -->
+<section class="catalog">
+<h2 style="text-align:center;">Product Catalog</h2>
+
+<div class="gallery">
+
+<div class="card">
+<img src="a.jpg">
+<h3>Gas Cooker</h3>
+<p class="price">Ksh 18,000</p>
+<button onclick="addToCart('Gas Cooker','18000','a.jpg')">Order</button>
+</div>
+
+<div class="card">
+<img src="b.jpg">
+<h3>Fridge</h3>
+<p class="price">Ksh 45,000</p>
+<button onclick="addToCart('Fridge','45000','b.jpg')">Order</button>
+</div>
+
+<div class="card">
+<img src="c.jpg">
+<h3>Official Shoes</h3>
+<p class="price">Ksh 3,500</p>
+<button onclick="addToCart('Official Shoes','3500','c.jpg')">Order</button>
+</div>
+
+<div class="card">
+<img src="e.jpg">
+<h3>Cooking Pots</h3>
+<p class="price">Ksh 6,000</p>
+<button onclick="addToCart('Cooking Pots','6000','e.jpg')">Order</button>
+</div>
+
 </div>
 </section>
 
-<!-- TERMS -->
-<section id="terms" class="terms-section">
-<h2>Terms & Conditions</h2>
-<div class="info-box">
-• Orders confirmed via WhatsApp.<br>
-• Prices may change without notice.<br>
-• Delivery timelines depend on your location.<br>
-• Customers must verify product details before payment.
-</div>
+<!-- MPESA -->
+<section class="payment">
+<h2>M-Pesa Payment</h2>
+<p>
+After placing your order on WhatsApp, make payment via:<br><br>
+<b>Paybill:</b> 123456<br>
+<b>Account Name:</b> MIDTEX<br><br>
+Send confirmation screenshot on WhatsApp.
+</p>
 </section>
-
-<!-- REFUND -->
-<section id="policy" class="policy-section">
-<h2>Return & Refund Policy</h2>
-<div class="info-box">
-• Returns accepted within 24 hours.<br>
-• Item must be unused and in original condition.<br>
-• Refund processed after inspection.<br>
-• Delivery charges are non-refundable.
-</div>
-</section>
-
-<!-- CONTACT -->
-<div class="contact" id="contact">
-<h2>Contact Midtex</h2>
-📞 0733 682 508 / 0724 928 553<br>
-📧 mwandomuindi@gmail.com<br>
-Instagram: AbedinegoMuindi | Facebook: Abedinegomuindi
-</div>
-
-<footer>
-© 2026 Midtex | All Rights Reserved
-</footer>
 
 </body>
 </html>
