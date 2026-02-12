@@ -5,31 +5,18 @@
 <title>Midtex | Online Household Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins', sans-serif;
-scroll-behavior:smooth;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
 body{
 background:linear-gradient(120deg,#f093fb,#f5576c,#4facfe);
 background-size:300% 300%;
 animation:bgMove 12s infinite alternate;
 color:#333;
 }
+@keyframes bgMove{0%{background-position:left;}100%{background-position:right;}}
 
-@keyframes bgMove{
-0%{background-position:left;}
-100%{background-position:right;}
-}
-
-/* DASHBOARD */
 .dashboard{
 padding:80px 20px;
 text-align:center;
@@ -37,20 +24,9 @@ color:white;
 background:linear-gradient(135deg,#ff512f,#dd2476);
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
+.dashboard h1{font-size:45px;letter-spacing:2px;}
+.dashboard p{max-width:800px;margin:20px auto;font-size:18px;line-height:1.7;}
 
-.dashboard h1{
-font-size:45px;
-letter-spacing:2px;
-}
-
-.dashboard p{
-max-width:800px;
-margin:20px auto;
-font-size:18px;
-line-height:1.7;
-}
-
-/* NAV */
 nav{
 background:rgba(0,0,0,0.8);
 padding:15px;
@@ -60,20 +36,9 @@ position:sticky;
 top:0;
 z-index:1000;
 }
+nav a{color:white;margin:0 15px;text-decoration:none;font-weight:600;transition:0.3s;}
+nav a:hover{color:#ffd700;}
 
-nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#ffd700;
-}
-
-/* BUTTON */
 .btn{
 display:inline-block;
 background:linear-gradient(45deg,#00c6ff,#0072ff);
@@ -85,27 +50,11 @@ font-weight:600;
 margin-top:15px;
 transition:0.3s;
 }
+.btn:hover{transform:scale(1.08);box-shadow:0 10px 20px rgba(0,0,0,0.3);}
 
-.btn:hover{
-transform:scale(1.08);
-box-shadow:0 10px 20px rgba(0,0,0,0.3);
-}
+section{padding:70px 20px;text-align:center;color:white;}
+section p{max-width:900px;margin:15px auto;line-height:1.8;font-size:17px;}
 
-/* SECTIONS */
-section{
-padding:70px 20px;
-text-align:center;
-color:white;
-}
-
-section p{
-max-width:900px;
-margin:15px auto;
-line-height:1.8;
-font-size:17px;
-}
-
-/* Individual Section Colors */
 #categories{background:linear-gradient(135deg,#ff9a9e,#fad0c4);}
 #gallery{background:linear-gradient(135deg,#a18cd1,#fbc2eb);}
 #catalog{background:linear-gradient(135deg,#fbc2eb,#a6c1ee);}
@@ -115,7 +64,6 @@ font-size:17px;
 #refund{background:linear-gradient(135deg,#fa709a,#fee140);}
 #sitemap{background:linear-gradient(135deg,#30cfd0,#330867);}
 
-/* GALLERY */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -133,33 +81,16 @@ color:white;
 box-shadow:0 10px 25px rgba(0,0,0,0.3);
 transition:0.4s;
 }
+.card:hover{transform:translateY(-10px);}
+.card img{width:100%;height:200px;object-fit:cover;border-radius:15px;margin-bottom:10px;}
 
-.card:hover{
-transform:translateY(-10px);
-}
-
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:15px;
-margin-bottom:10px;
-}
-
-/* CONTACT */
 .contact{
 background:linear-gradient(135deg,#000428,#004e92);
 color:white;
 text-align:center;
 padding:60px 20px;
 }
-
-footer{
-background:black;
-color:white;
-text-align:center;
-padding:20px;
-}
+footer{background:black;color:white;text-align:center;padding:20px;}
 </style>
 
 <script>
@@ -204,7 +135,7 @@ Order via WhatsApp
 
 <section id="categories">
 <h2>Product Categories</h2>
-<p>We organize our products into Household Items, Electrical Items, and Footwear for easy shopping and quick navigation.</p>
+<p>We organize our products into Household Items, Electrical Items, and Footwear for easy shopping.</p>
 <div>
 <a class="btn" onclick="filterProducts('all')">All</a>
 <a class="btn" onclick="filterProducts('household')">Household</a>
@@ -221,73 +152,69 @@ Order via WhatsApp
 <div class="card electric">
 <img src="a.jpg">
 <h3>Oven</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Oven" target="_blank">Order via WhatsApp</a>
 </div>
 
-  <div class="card electric">
+<div class="card electric">
 <img src="1.jpg">
 <h3>fridge</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20fridge" target="_blank">Order via WhatsApp</a>
 </div>
 
-    <div class="card electric">
+<div class="card electric">
 <img src="2.jpg">
 <h3>premier one door fridge</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20premier%20one%20door%20fridge" target="_blank">Order via WhatsApp</a>
 </div>
 
-  <div class="card electric">
+<div class="card electric">
 <img src="3.jpg">
 <h3>fridge</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20fridge" target="_blank">Order via WhatsApp</a>
 </div>
 
-  <div class="card electric">
+<div class="card electric">
 <img src="4.jpg">
 <h3>fridge</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20fridge" target="_blank">Order via WhatsApp</a>
 </div>
 
-  <div class="card electric">
+<div class="card electric">
 <img src="5.jpg">
 <h3>fridge</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20fridge" target="_blank">Order via WhatsApp</a>
 </div>
 
-  <div class="card electric">
+<div class="card electric">
 <img src="6.jpg">
 <h3>Oven</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Oven" target="_blank">Order via WhatsApp</a>
 </div>
 
-    <div class="card electric">
+<div class="card electric">
 <img src="7.jpg">
 <h3>Oven</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Oven" target="_blank">Order via WhatsApp</a>
 </div>
 
-     <div class="card electric">
+<div class="card electric">
 <img src="8.jpg">
 <h3>Oven</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Oven" target="_blank">Order via WhatsApp</a>
 </div>
-  
-   <div class="card electric">
+
+<div class="card electric">
 <img src="9.jpg">
 <h3>Oven</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Oven" target="_blank">Order via WhatsApp</a>
 </div>
 
-  <div class="card electric">
+<div class="card electric">
 <img src="10.jpg">
 <h3>Oven</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Gas%20Cooker" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Oven" target="_blank">Order via WhatsApp</a>
 </div>
 
-
-
-  
-  
 <div class="card electric">
 <img src="b.jpg">
 <h3>Fridge</h3>
@@ -297,7 +224,7 @@ Order via WhatsApp
 <div class="card wear">
 <img src="c.jpg">
 <h3>Casual Shoes</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Official%20Shoes" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Casual%20Shoes" target="_blank">Order via WhatsApp</a>
 </div>
 
 <div class="card wear">
@@ -315,13 +242,13 @@ Order via WhatsApp
 <div class="card household">
 <img src="f.jpg">
 <h3>cooking pots</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Fridge" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20cooking%20pots" target="_blank">Order via WhatsApp</a>
 </div>
 
 <div class="card electric">
 <img src="g.jpg">
 <h3>fridge</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Cooking%20Pots" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20fridge" target="_blank">Order via WhatsApp</a>
 </div>
 
 <div class="card household">
@@ -333,7 +260,7 @@ Order via WhatsApp
 <div class="card electric">
 <img src="k.jpg">
 <h3>Electric Oven</h3>
-<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Water%20Dispenser" target="_blank">Order via WhatsApp</a>
+<a class="btn" href="https://wa.me/254733682508?text=Hello%20Midtex,%20I%20want%20this%20product:%20Electric%20Oven" target="_blank">Order via WhatsApp</a>
 </div>
 
 </div>
@@ -343,8 +270,7 @@ Order via WhatsApp
 <h2>About MIDTEX</h2>
 <p>
 MIDTEX is a purely online household and appliance store committed to delivering quality,
-durability and affordability. Our goal is to make shopping simple through WhatsApp ordering
-while maintaining professional customer service standards.
+durability and affordability. Our goal is to make shopping simple through WhatsApp ordering.
 </p>
 </section>
 
@@ -352,7 +278,6 @@ while maintaining professional customer service standards.
 <h2>Terms & Conditions</h2>
 <p>
 All orders are confirmed via WhatsApp. Prices may vary depending on availability.
-MIDTEX reserves the right to update product listings and policies without prior notice.
 Customers must confirm product details before payment.
 </p>
 </section>
@@ -360,24 +285,20 @@ Customers must confirm product details before payment.
 <section id="privacy">
 <h2>Privacy Policy</h2>
 <p>
-Customer information collected during ordering is used strictly for processing
-and communication purposes. MIDTEX does not share or sell customer data.
+Customer information is used strictly for order processing and communication.
 </p>
 </section>
 
 <section id="refund">
 <h2>Return & Refund Policy</h2>
 <p>
-Returns are accepted within 48 hours for defective products.
-Refunds are processed after inspection and confirmation.
+Returns accepted within 48 hours for defective products after confirmation.
 </p>
 </section>
 
 <section id="sitemap">
 <h2>Website Sitemap</h2>
-<p>
-Home | Gallery | Categories | Catalog | About | Terms | Privacy | Refund | Contact
-</p>
+<p>Home | Gallery | Categories | About | Terms | Privacy | Refund | Contact</p>
 </section>
 
 <div class="contact" id="contact">
@@ -393,9 +314,3 @@ Home | Gallery | Categories | Catalog | About | Terms | Privacy | Refund | Conta
 
 </body>
 </html>
-
-
-
-
-
-
